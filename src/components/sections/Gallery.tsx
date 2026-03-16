@@ -19,7 +19,7 @@ function Placeholder({ label }: { label: string }) {
 const showcaseRooms = ["Sala", "Cozinha", "Quartos", "Áreas comuns", "Externo"] as const;
 const showcase = showcaseRooms
   .map((room) => property.gallery.find((p) => p.room === room))
-  .filter(Boolean) as (typeof property.gallery)[number][];
+  .filter((p): p is (typeof property.gallery)[number] => p !== undefined);
 
 /*
  * Bento grid layout for desktop:
@@ -127,16 +127,12 @@ export function Gallery() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                   >
-                    {photo.src ? (
-                      <Image
-                        src={photo.src}
-                        alt={photo.label}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <Placeholder label={photo.label} />
-                    )}
+                    <Image
+                      src={photo.src}
+                      alt={photo.label}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4">
                       <span className="text-sm font-medium text-white">{photo.room}</span>
                     </div>
@@ -158,16 +154,12 @@ export function Gallery() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                 >
-                  {photo.src ? (
-                    <Image
-                      src={photo.src}
-                      alt={photo.label}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <Placeholder label={photo.label} />
-                  )}
+                  <Image
+                    src={photo.src}
+                    alt={photo.label}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4">
                     <span className="text-sm font-medium text-white">{photo.room}</span>
                   </div>
@@ -201,16 +193,12 @@ export function Gallery() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
                   >
-                    {photo.src ? (
-                      <Image
-                        src={photo.src}
-                        alt={photo.label}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <Placeholder label={photo.label} />
-                    )}
+                    <Image
+                      src={photo.src}
+                      alt={photo.label}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 opacity-0 transition-opacity group-hover:opacity-100">
                       <span className="text-xs font-medium text-white">{photo.label}</span>
                     </div>
@@ -285,24 +273,13 @@ export function Gallery() {
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              {property.gallery[lightboxIndex].src ? (
-                <Image
-                  src={property.gallery[lightboxIndex].src!}
-                  alt={property.gallery[lightboxIndex].label}
-                  width={1200}
-                  height={800}
-                  className="max-h-[75vh] rounded-lg object-contain"
-                />
-              ) : (
-                <div
-                  className="flex h-[50vh] w-[70vw] max-w-3xl items-center justify-center rounded-lg"
-                  style={{ aspectRatio: "4/3" }}
-                >
-                  <Placeholder
-                    label={property.gallery[lightboxIndex].label}
-                  />
-                </div>
-              )}
+              <Image
+                src={property.gallery[lightboxIndex].src}
+                alt={property.gallery[lightboxIndex].label}
+                width={1200}
+                height={800}
+                className="max-h-[75vh] rounded-lg object-contain"
+              />
               {/* Caption */}
               <div className="mt-4 text-center">
                 <span className="text-sm font-medium text-white">
