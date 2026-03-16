@@ -280,7 +280,7 @@ export function HeroWithHighlights() {
                 transition={{ duration: 2, repeat: Infinity }}
                 aria-label="Rolar para destaques"
               >
-                <ChevronDown className="h-5 w-5 text-white/60" />
+                <ChevronDown className="h-5 w-5 md:h-7 md:w-7 text-white/60" />
               </motion.button>
             </motion.div>
           </div>

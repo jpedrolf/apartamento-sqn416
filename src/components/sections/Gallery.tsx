@@ -119,7 +119,7 @@ export function Gallery() {
                 return (
                   <motion.button
                     key={photo.src}
-                    className={`group relative overflow-hidden rounded-lg ${style.className}`}
+                    className={`group relative cursor-pointer overflow-hidden rounded-lg ${style.className}`}
                     style={{ aspectRatio: style.aspect }}
                     onClick={() => openShowcaseRoom(photo)}
                     initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ export function Gallery() {
               {showcase.map((photo, i) => (
                 <motion.button
                   key={photo.src}
-                  className="relative w-[75vw] flex-shrink-0 snap-center overflow-hidden rounded-lg"
+                  className="relative w-[75vw] flex-shrink-0 cursor-pointer snap-center overflow-hidden rounded-lg"
                   style={{ aspectRatio: "3/4" }}
                   onClick={() => openShowcaseRoom(photo)}
                   initial={{ opacity: 0, x: 20 }}
@@ -185,7 +185,7 @@ export function Gallery() {
                 return (
                   <motion.button
                     key={photo.src}
-                    className="group relative overflow-hidden rounded-lg"
+                    className="group relative cursor-pointer overflow-hidden rounded-lg"
                     style={{ aspectRatio: "4/3" }}
                     onClick={() => openLightbox(realIndex)}
                     initial={{ opacity: 0, y: 20 }}
