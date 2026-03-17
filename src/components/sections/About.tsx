@@ -62,7 +62,7 @@ export function About() {
               <div className="md:flex-1">
                 <Home className="h-6 w-6 text-accent" />
                 <h3 className="mt-3 font-semibold text-lg">Detalhes do imóvel</h3>
-                <div className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-4">
+                <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
                   <span className="text-muted">
                     <strong className="text-foreground">3</strong> quartos
                   </span>
@@ -75,10 +75,10 @@ export function About() {
                   <span className="text-muted">
                     <strong className="text-foreground">{property.address.floor}</strong>
                   </span>
-                  <span className="text-muted">Ventilação cruzada</span>
-                  <span className="text-muted">Semi-mobiliado</span>
-                  <span className="text-muted">Pet-friendly</span>
-                  <span className="text-muted">Bicicletário</span>
+                  <span className="text-muted whitespace-nowrap">Ventilação cruzada</span>
+                  <span className="text-muted whitespace-nowrap">Semi-mobiliado</span>
+                  <span className="text-muted whitespace-nowrap">Pet-friendly</span>
+                  <span className="text-muted whitespace-nowrap">Bicicletário</span>
                 </div>
               </div>
               <div className="mt-4 border-t border-white/10 pt-4 md:mt-0 md:border-t-0 md:border-l md:pt-0 md:pl-10">

@@ -151,17 +151,17 @@ export const property = {
 
   // Contato
   contact: {
-    whatsapp: "5561999999999", // Substituir pelo número real
+    whatsapp: "5561982399222",
     whatsappMessage:
       "Olá! Vi o anúncio do apartamento na SQN 415/416 (Apt 202) e tenho interesse. Podemos conversar?",
-    email: "contato@example.com", // Substituir pelo e-mail real
+    email: "apartamentomocha@gmail.com",
   },
 
   // Hero
   hero: "/images/gallery/hero.jpg",
 
   // Galeria
-  galleryFilters: ["Todos", "Sala", "Cozinha", "Quartos", "Áreas comuns", "Externo"] as const,
+  galleryFilters: ["Todos", "Sala", "Cozinha", "Quartos", "Banheiros", "Área de serviço", "Externo"] as const,
   gallery: [
     { label: "Sala de estar", src: "/images/gallery/sala-vista.jpg", room: "Sala" },
     { label: "Sala — janela", src: "/images/gallery/sala-janela.jpg", room: "Sala" },
@@ -175,11 +175,11 @@ export const property = {
     { label: "Quarto 2", src: "/images/gallery/quarto2-entrada.jpg", room: "Quartos" },
     { label: "Quarto 2 — janela", src: "/images/gallery/quarto2-janela.jpg", room: "Quartos" },
     { label: "Quarto 3", src: "/images/gallery/quarto3.jpg", room: "Quartos" },
-    { label: "Banheiro social", src: "/images/gallery/banheiro-social.jpg", room: "Áreas comuns" },
-    { label: "Banheiro de serviço", src: "/images/gallery/banheiro-servico.jpg", room: "Áreas comuns" },
-    { label: "Área de serviço — lavanderia", src: "/images/gallery/area-servico-lavanderia.jpg", room: "Áreas comuns" },
-    { label: "Área de serviço — cobogó", src: "/images/gallery/area-servico-cobogo.jpg", room: "Áreas comuns" },
-    { label: "Área de serviço", src: "/images/gallery/area-servico.jpg", room: "Áreas comuns" },
+    { label: "Banheiro social", src: "/images/gallery/banheiro-social.jpg", room: "Banheiros" },
+    { label: "Banheiro de serviço", src: "/images/gallery/banheiro-servico.jpg", room: "Banheiros" },
+    { label: "Área de serviço — lavanderia", src: "/images/gallery/area-servico-lavanderia.jpg", room: "Área de serviço" },
+    { label: "Área de serviço — cobogó", src: "/images/gallery/area-servico-cobogo.jpg", room: "Área de serviço" },
+    { label: "Área de serviço", src: "/images/gallery/area-servico.jpg", room: "Área de serviço" },
     { label: "Fachada — jardim", src: "/images/gallery/fachada-jardim.jpg", room: "Externo" },
     { label: "Fachada — frontal", src: "/images/gallery/fachada-frontal.jpg", room: "Externo" },
     { label: "Portaria", src: "/images/gallery/portaria.jpg", room: "Externo" },

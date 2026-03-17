@@ -26,7 +26,7 @@ const SELECTED = {
     { file: "apto-202_foto_quarto-2_1.HEIC", label: "quarto2-entrada" },
     { file: "apto-202_foto_quarto-2_4.HEIC", label: "quarto2-janela" },
     { file: "apto-202_foto_quarto-3_3.HEIC", label: "quarto3" },
-    { file: "apto-202_foto_banheiro-social_2.HEIC", label: "banheiro-social" },
+    { file: "apto-202_foto_banheiro-social_5.HEIC", label: "banheiro-social" },
     { file: "apto-202_foto_banheiro-servico_1.HEIC", label: "banheiro-servico" },
     { file: "apto-202_foto_area-servico_4.HEIC", label: "area-servico-lavanderia" },
     { file: "apto-202_foto_area-servico_6.HEIC", label: "area-servico-cobogo" },

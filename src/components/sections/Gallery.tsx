@@ -16,20 +16,20 @@ function Placeholder({ label }: { label: string }) {
 }
 
 /* One representative photo per room for the showcase grid */
-const showcaseRooms = ["Sala", "Cozinha", "Quartos", "Áreas comuns", "Externo"] as const;
+const showcaseRooms = ["Sala", "Cozinha", "Quartos", "Banheiros", "Área de serviço", "Externo"] as const;
 const showcase = showcaseRooms
   .map((room) => property.gallery.find((p) => p.room === room))
   .filter((p): p is (typeof property.gallery)[number] => p !== undefined);
 
 /*
- * Bento grid layout for desktop:
+ * Bento grid layout for desktop (6 rooms):
  * ┌──────────────┬─────────┐
  * │   Sala       │ Cozinha │
  * │  (2×2 hero)  ├─────────┤
  * │              │ Quartos │
- * ├──────┬───────┴─────────┤
- * │ Áreas│    Externo      │  ← flex row, equal height
- * └──────┴─────────────────┘
+ * ├──────┬───────┴┬────────┤
+ * │Banho │Á.Serv. │Externo │  ← flex row, equal height
+ * └──────┴────────┴────────┘
  */
 const topBentoStyles: { className: string; aspect: string }[] = [
   { className: "col-span-2 row-span-2", aspect: "4/3" },
@@ -145,9 +145,7 @@ export function Gallery() {
                 {showcase.slice(3).map((photo, i) => (
                   <motion.button
                     key={photo.src}
-                    className={`group relative cursor-pointer overflow-hidden rounded-lg ${
-                      i === 0 ? "w-1/3" : "w-2/3"
-                    }`}
+                    className="group relative flex-1 cursor-pointer overflow-hidden rounded-lg"
                     onClick={() => openShowcaseRoom(photo)}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
