@@ -301,11 +301,11 @@ export function HeroWithHighlights() {
               return (
                 <motion.div
                   key={item.title}
-                  className="rounded-xl border border-white/10 bg-background-warm/95 p-6 backdrop-blur-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-background-warm hover:shadow-lg"
-                  initial={{ opacity: 0, y: 24 }}
+                  className="rounded-xl border border-white/10 bg-background-warm/95 p-6 backdrop-blur-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-background-warm hover:shadow-lg will-change-[opacity,transform]"
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
                 >
                   {Icon && <Icon className="h-7 w-7 text-accent" />}
                   <h3 className="mt-3 text-lg font-semibold text-white">

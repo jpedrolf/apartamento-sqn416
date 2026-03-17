@@ -77,6 +77,17 @@ export function Gallery() {
     return () => window.removeEventListener("keydown", handler);
   }, [lightboxIndex, navigate]);
 
+  /* Preload all gallery images in background after page load */
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      property.gallery.forEach((photo) => {
+        const img = new window.Image();
+        img.src = photo.src;
+      });
+    }, 2000); // wait 2s after mount so it doesn't compete with initial page load
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="px-6 py-14 md:px-12 lg:px-20">
       <div className="mx-auto max-w-6xl">
@@ -131,6 +142,8 @@ export function Gallery() {
                         src={photo.src}
                         alt={photo.label}
                         fill
+                        sizes="(min-width: 768px) 66vw, 100vw"
+                        priority
                         className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                       />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4">
@@ -156,6 +169,8 @@ export function Gallery() {
                       src={photo.src}
                       alt={photo.label}
                       fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      priority
                       className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4">
