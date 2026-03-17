@@ -24,7 +24,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://apartamentomocha.com.br"),
+  metadataBase: new URL("https://apartamento-mocha.vercel.app"),
   title: "Apartamento Mocha · SQN 416, Bloco P — Asa Norte, Brasília",
   description:
     "Apartamento de 3 quartos na Asa Norte, Brasília. ~65m², ventilação cruzada, piso em taco restaurado, cozinha contemporânea. Semi-mobiliado, pet-friendly, ao lado do Parque Olhos D'Água. R$ 3.800/mês.",
