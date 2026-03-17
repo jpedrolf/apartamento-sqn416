@@ -51,17 +51,12 @@ function FloorPlanSVG() {
       <line x1="257" y1="279" x2="257" y2="522" stroke={wall} strokeWidth="2" />
       <line x1="431" y1="279" x2="431" y2="522" stroke={wall} strokeWidth="2" />
 
-      {/* ===== DOOR ARCS ===== */}
+      {/* ===== DOOR OPENINGS ===== */}
       <rect x="29" y="211" width="2" height="45" fill={bg} />
-      <path d="M31,211c13.9-8,31.1-8,45,0" fill="none" stroke={accent} strokeDasharray="3 3" />
       <rect x="255" y="115" width="4" height="50" fill={bg} />
-      <path d="M257,115c-13.9-8-31.1-8-45,0" fill="none" stroke={accent} strokeDasharray="3 3" />
       <rect x="202" y="209" width="47" height="4" fill={bg} />
-      <path d="M202,211c7.5,13,7.5,29,0,42" fill="none" stroke={accent} strokeDasharray="3 3" />
       <rect x="377" y="100" width="42" height="4" fill={bg} />
-      <path d="M377,102c6.8-11.8,6.8-26.2,0-38" fill="none" stroke={accent} strokeDasharray="3 3" />
       <rect x="429" y="51" width="4" height="41" fill={bg} />
-      <path d="M431,92c11.8,6.8,26.2,6.8,38,0" fill="none" stroke={accent} strokeDasharray="3 3" />
       <rect x="487" y="156" width="4" height="44" fill={bg} />
       <rect x="101" y="153" width="4" height="48" fill={bg} />
 
@@ -94,68 +89,53 @@ function FloorPlanSVG() {
       {/* L-shaped kitchen counter */}
       <path d="M105,150.8h31.9c2.5,0,4.6-2.1,4.6-4.6V60c0-2.8,2.3-5.1,5.1-5.1h108.4" fill="none" stroke={dimColor} strokeWidth="0.9" />
 
-      {/* ===== ROOM LABELS ===== */}
-      <text x="138" y="405" fill={labelBold} fontSize="16" fontWeight="700" fontFamily="var(--font-sans)">
+      {/* ===== ROOM LABELS (centered in each room) ===== */}
+      {/* Sala: x=(20+257)/2=138, y=(279+522)/2=400 */}
+      <text x="138" y="395" textAnchor="middle" fill={labelBold} fontSize="16" fontWeight="700" fontFamily="var(--font-sans)">
         Sala
       </text>
-      <text x="128" y="423" fill={label} fontSize="10" fontFamily="var(--font-sans)">
+      <text x="138" y="413" textAnchor="middle" fill={label} fontSize="10" fontFamily="var(--font-sans)">
         estar / jantar
       </text>
-      <text x="170" y="130" fill={labelBold} fontSize="14" fontWeight="700" fontFamily="var(--font-sans)">
+      {/* Cozinha: x=(103+257)/2=180, y=(20+211)/2=115 */}
+      <text x="180" y="120" textAnchor="middle" fill={labelBold} fontSize="14" fontWeight="700" fontFamily="var(--font-sans)">
         Cozinha
       </text>
-      <text x="338" y="65" fill={label} fontSize="11" fontFamily="var(--font-sans)">
+      {/* Área de Serviço: x=(257+431)/2=344, y=(20+102)/2=61 */}
+      <text x="344" y="55" textAnchor="middle" fill={label} fontSize="11" fontFamily="var(--font-sans)">
         Área de
       </text>
-      <text x="339" y="79" fill={label} fontSize="11" fontFamily="var(--font-sans)">
+      <text x="344" y="69" textAnchor="middle" fill={label} fontSize="11" fontFamily="var(--font-sans)">
         Serviço
       </text>
-      <text x="385" y="123.8" fill={label} fontSize="10" fontFamily="var(--font-sans)">
+      {/* Banheiro serviço: x=(357+431)/2=394, y=(102+211)/2=156 */}
+      <text x="394" y="150" textAnchor="middle" fill={label} fontSize="10" fontFamily="var(--font-sans)">
         Banheiro
       </text>
-      <text x="389" y="136.8" fill={label} fontSize="10" fontFamily="var(--font-sans)">
+      <text x="394" y="163" textAnchor="middle" fill={label} fontSize="10" fontFamily="var(--font-sans)">
         serviço
       </text>
-      <text x="510" y="82" fill={labelBold} fontSize="13" fontWeight="700" fontFamily="var(--font-sans)">
+      {/* Quarto 3: x=(431+609)/2=520, y=(20+149)/2=84 */}
+      <text x="520" y="78" textAnchor="middle" fill={labelBold} fontSize="13" fontWeight="700" fontFamily="var(--font-sans)">
         Quarto 3
       </text>
-      <text x="505" y="98" fill={label} fontSize="10" fontFamily="var(--font-sans)">
+      <text x="520" y="94" textAnchor="middle" fill={label} fontSize="10" fontFamily="var(--font-sans)">
         (dependência)
       </text>
-      <text x="544" y="210" fill={label} fontSize="11" fontFamily="var(--font-sans)">
+      {/* Banheiro social: x=(489+609)/2=549, y=(149+279)/2=214 */}
+      <text x="549" y="208" textAnchor="middle" fill={label} fontSize="11" fontFamily="var(--font-sans)">
         Banheiro
       </text>
-      <text x="552" y="224" fill={label} fontSize="11" fontFamily="var(--font-sans)">
+      <text x="549" y="222" textAnchor="middle" fill={label} fontSize="11" fontFamily="var(--font-sans)">
         social
       </text>
-      <text x="408" y="250" fill={dimColor} fontSize="9" fontFamily="var(--font-mono)" letterSpacing="2">
-        CIRCULAÇÃO
-      </text>
-      <text x="330" y="405" fill={labelBold} fontSize="15" fontWeight="700" fontFamily="var(--font-sans)">
+      {/* Quarto 1: x=(257+431)/2=344, y=(279+522)/2=400 */}
+      <text x="344" y="395" textAnchor="middle" fill={labelBold} fontSize="15" fontWeight="700" fontFamily="var(--font-sans)">
         Quarto 1
       </text>
-      <text x="506" y="405" fill={labelBold} fontSize="15" fontWeight="700" fontFamily="var(--font-sans)">
+      {/* Quarto 2: x=(431+609)/2=520, y=(279+522)/2=400 */}
+      <text x="520" y="395" textAnchor="middle" fill={labelBold} fontSize="15" fontWeight="700" fontFamily="var(--font-sans)">
         Quarto 2
-      </text>
-
-      {/* ===== DIMENSION LINES ===== */}
-      <line x1="20" y1="542" x2="609" y2="542" stroke={dimColor} strokeWidth="0.8" />
-      <line x1="20" y1="537" x2="20" y2="547" stroke={dimColor} strokeWidth="0.8" />
-      <line x1="609" y1="537" x2="609" y2="547" stroke={dimColor} strokeWidth="0.8" />
-      <text x="312" y="556" fill={dimColor} fontSize="11" fontFamily="var(--font-mono)">
-        8,91 m
-      </text>
-      <line x1="103" y1="13" x2="609" y2="13" stroke={dimColor} strokeWidth="0.8" />
-      <line x1="103" y1="8" x2="103" y2="18" stroke={dimColor} strokeWidth="0.8" />
-      <line x1="609" y1="8" x2="609" y2="18" stroke={dimColor} strokeWidth="0.8" />
-      <text x="355" y="9" fill={dimColor} fontSize="10" fontFamily="var(--font-mono)">
-        7,53 m
-      </text>
-      <line x1="628" y1="20" x2="628" y2="522" stroke={dimColor} strokeWidth="0.8" />
-      <line x1="623" y1="20" x2="633" y2="20" stroke={dimColor} strokeWidth="0.8" />
-      <line x1="623" y1="522" x2="633" y2="522" stroke={dimColor} strokeWidth="0.8" />
-      <text x="635" y="275" fill={dimColor} fontSize="10" fontFamily="var(--font-mono)" transform="rotate(90 635 275)">
-        7,50 m
       </text>
 
       {/* Window legend */}
@@ -168,8 +148,6 @@ function FloorPlanSVG() {
 }
 
 export function FloorPlan() {
-  const m = property.floorPlan.measurements;
-
   return (
     <section className="px-6 py-14 md:px-12 lg:px-20">
       <div className="mx-auto max-w-[900px]">
@@ -193,33 +171,6 @@ export function FloorPlan() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <FloorPlanSVG />
-        </motion.div>
-
-        {/* Measurements */}
-        <motion.div
-          className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {[
-            { label: "Largura (topo)", value: m.widthTop },
-            { label: "Largura (base)", value: m.widthBottom },
-            { label: "Faixa de serviço", value: m.depthService },
-            { label: "Circulação", value: m.depthCirculation },
-            { label: "Faixa social", value: m.depthSocial },
-            { label: "Área estimada", value: property.details.area },
-          ].map((item) => (
-            <div key={item.label}>
-              <span className="block text-xs uppercase tracking-wider text-muted">
-                {item.label}
-              </span>
-              <span className="font-mono text-lg font-semibold">
-                {item.value}
-              </span>
-            </div>
-          ))}
         </motion.div>
 
         {/* Rooms */}

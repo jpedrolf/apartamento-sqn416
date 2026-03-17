@@ -114,7 +114,7 @@ export const property = {
     {
       title: "Ventilação cruzada",
       description:
-        "Apartamento vazado com brisa natural o dia todo — dispensa ar-condicionado na maior parte do ano.",
+        "Apartamento vazado com brisa natural o dia todo.",
       icon: "Wind" as const,
     },
     {
@@ -138,13 +138,13 @@ export const property = {
     {
       title: "Pet-friendly",
       description:
-        "Condomínio permite animais. E o Parque Olhos D'Água fica a 5 minutos a pé.",
+        "Além do condomínio permitir animais, temos uma ampla área verde próxima ao bloco, onde seu cão pode correr à vontade.",
       icon: "PawPrint" as const,
     },
     {
-      title: "Parque Olhos D'Água",
+      title: "Integrado à natureza",
       description:
-        "Trilhas, nascente e fauna a poucos passos. Natureza integrada ao dia a dia.",
+        "A menos de 5 min do Parque Olhos D'Água. Trilhas, nascente e fauna a poucos passos. Natureza integrada ao dia a dia.",
       icon: "TreePine" as const,
     },
   ],
@@ -176,6 +176,9 @@ export const property = {
     { label: "Quarto 2 — janela", src: "/images/gallery/quarto2-janela.jpg", room: "Quartos" },
     { label: "Quarto 3", src: "/images/gallery/quarto3.jpg", room: "Quartos" },
     { label: "Banheiro social", src: "/images/gallery/banheiro-social.jpg", room: "Áreas comuns" },
+    { label: "Banheiro de serviço", src: "/images/gallery/banheiro-servico.jpg", room: "Áreas comuns" },
+    { label: "Área de serviço — lavanderia", src: "/images/gallery/area-servico-lavanderia.jpg", room: "Áreas comuns" },
+    { label: "Área de serviço — cobogó", src: "/images/gallery/area-servico-cobogo.jpg", room: "Áreas comuns" },
     { label: "Área de serviço", src: "/images/gallery/area-servico.jpg", room: "Áreas comuns" },
     { label: "Fachada — jardim", src: "/images/gallery/fachada-jardim.jpg", room: "Externo" },
     { label: "Fachada — frontal", src: "/images/gallery/fachada-frontal.jpg", room: "Externo" },

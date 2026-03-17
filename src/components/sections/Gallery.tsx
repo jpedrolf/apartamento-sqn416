@@ -28,15 +28,13 @@ const showcase = showcaseRooms
  * │  (2×2 hero)  ├─────────┤
  * │              │ Quartos │
  * ├──────┬───────┴─────────┤
- * │ Áreas│    Externo      │
+ * │ Áreas│    Externo      │  ← flex row, equal height
  * └──────┴─────────────────┘
  */
-const bentoStyles: { className: string; aspect: string }[] = [
+const topBentoStyles: { className: string; aspect: string }[] = [
   { className: "col-span-2 row-span-2", aspect: "4/3" },
   { className: "", aspect: "4/3" },
   { className: "", aspect: "4/3" },
-  { className: "", aspect: "3/2" },
-  { className: "col-span-2", aspect: "3/1" },
 ];
 
 export function Gallery() {
@@ -113,19 +111,48 @@ export function Gallery() {
         {!activeFilter && (
           <>
             {/* Desktop bento */}
-            <div className="hidden gap-2 md:grid md:grid-cols-3 md:auto-rows-auto">
-              {showcase.map((photo, i) => {
-                const style = bentoStyles[i] || bentoStyles[1];
-                return (
+            <div className="hidden md:block">
+              {/* Top grid: Sala hero + Cozinha + Quartos */}
+              <div className="grid grid-cols-3 gap-2">
+                {showcase.slice(0, 3).map((photo, i) => {
+                  const style = topBentoStyles[i];
+                  return (
+                    <motion.button
+                      key={photo.src}
+                      className={`group relative cursor-pointer overflow-hidden rounded-lg ${style.className}`}
+                      style={{ aspectRatio: style.aspect }}
+                      onClick={() => openShowcaseRoom(photo)}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.08 }}
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.label}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                        <span className="text-sm font-medium text-white">{photo.room}</span>
+                      </div>
+                    </motion.button>
+                  );
+                })}
+              </div>
+              {/* Bottom row: equal height via flex */}
+              <div className="mt-2 flex h-52 gap-2">
+                {showcase.slice(3).map((photo, i) => (
                   <motion.button
                     key={photo.src}
-                    className={`group relative cursor-pointer overflow-hidden rounded-lg ${style.className}`}
-                    style={{ aspectRatio: style.aspect }}
+                    className={`group relative cursor-pointer overflow-hidden rounded-lg ${
+                      i === 0 ? "w-1/3" : "w-2/3"
+                    }`}
                     onClick={() => openShowcaseRoom(photo)}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                    transition={{ duration: 0.5, delay: (i + 3) * 0.08 }}
                   >
                     <Image
                       src={photo.src}
@@ -137,8 +164,8 @@ export function Gallery() {
                       <span className="text-sm font-medium text-white">{photo.room}</span>
                     </div>
                   </motion.button>
-                );
-              })}
+                ))}
+              </div>
             </div>
 
             {/* Mobile carousel */}

@@ -24,15 +24,10 @@
   <line x1="257" y1="279" x2="257" y2="522" fill="none" stroke="#9bb0a2" stroke-width="2"/>
   <line x1="431" y1="279" x2="431" y2="522" fill="none" stroke="#9bb0a2" stroke-width="2"/>
   <rect x="29" y="211" width="2" height="45" fill="#244536"/>
-  <path d="M31,211c13.9-8,31.1-8,45,0" fill="none" stroke="#40916c" stroke-dasharray="3 3"/>
   <rect x="255" y="115" width="4" height="50" fill="#244536"/>
-  <path d="M257,115c-13.9-8-31.1-8-45,0" fill="none" stroke="#40916c" stroke-dasharray="3 3"/>
   <rect x="202" y="209" width="47" height="4" fill="#244536"/>
-  <path d="M202,211c7.5,13,7.5,29,0,42" fill="none" stroke="#40916c" stroke-dasharray="3 3"/>
   <rect x="377" y="100" width="42" height="4" fill="#244536"/>
-  <path d="M377,102c6.8-11.8,6.8-26.2,0-38" fill="none" stroke="#40916c" stroke-dasharray="3 3"/>
   <rect x="429" y="51" width="4" height="41" fill="#244536"/>
-  <path d="M431,92c11.8,6.8,26.2,6.8,38,0" fill="none" stroke="#40916c" stroke-dasharray="3 3"/>
   <rect x="487" y="156" width="4" height="44" fill="#244536"/>
   <rect x="101" y="153" width="4" height="48" fill="#244536"/>
   <line x1="55" y1="220" x2="55" y2="207" fill="none" stroke="#d4a24e" stroke-width="1.5"/>
@@ -59,22 +54,9 @@
   <text transform="translate(488 98)" fill="#9bb0a2" font-family="Helvetica, Helvetica" font-size="10" isolation="isolate"><tspan x="0" y="0">(dependência)</tspan></text>
   <text transform="translate(527 210)" fill="#9bb0a2" font-family="Helvetica, Helvetica" font-size="11" isolation="isolate"><tspan x="0" y="0">Banheiro</tspan></text>
   <text transform="translate(534.9 224)" fill="#9bb0a2" font-family="Helvetica, Helvetica" font-size="11" isolation="isolate"><tspan x="0" y="0">social</tspan></text>
-  <text transform="translate(391 250)" fill="#6b8a74" font-family="Courier, Courier" font-size="9" isolation="isolate" letter-spacing=".2em"><tspan x="0" y="0">CIRCULAÇÃO</tspan></text>
   <text transform="translate(313.2 405)" fill="#eef2ef" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="700" isolation="isolate"><tspan x="0" y="0">Quarto 1</tspan></text>
   <text transform="translate(489.2 405)" fill="#eef2ef" font-family="Helvetica-Bold, Helvetica" font-size="15" font-weight="700" isolation="isolate"><tspan x="0" y="0">Quarto 2</tspan></text>
-  <line x1="20" y1="542" x2="609" y2="542" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <line x1="20" y1="537" x2="20" y2="547" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <line x1="609" y1="537" x2="609" y2="547" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <text transform="translate(295.2 556)" fill="#6b8a74" font-family="Courier, Courier" font-size="11" isolation="isolate"><tspan x="0" y="0">8,91 m</tspan></text>
-  <line x1="103" y1="13" x2="609" y2="13" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <line x1="103" y1="8" x2="103" y2="18" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <line x1="609" y1="8" x2="609" y2="18" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <text transform="translate(338 9)" fill="#6b8a74" font-family="Courier, Courier" font-size="10" isolation="isolate"><tspan x="0" y="0">7,53 m</tspan></text>
-  <line x1="628" y1="20" x2="628" y2="522" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <line x1="623" y1="20" x2="633" y2="20" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <line x1="623" y1="522" x2="633" y2="522" fill="none" stroke="#6b8a74" stroke-width=".8"/>
-  <text transform="translate(635 275) rotate(90)" fill="#6b8a74" font-family="Courier, Courier" font-size="10" isolation="isolate"><tspan x="0" y="0">7,50 m</tspan></text>
+  <path d="M105,150.8h31.9c2.5,0,4.6-2.1,4.6-4.6V60c0-2.8,2.3-5.1,5.1-5.1h108.4" fill="none" stroke="#6b8a74" stroke-width=".9"/>
   <line x1="25" y1="556" x2="45" y2="556" fill="none" stroke="#d4a24e" stroke-width="3"/>
   <text transform="translate(51 559)" fill="#6b8a74" font-family="Helvetica, Helvetica" font-size="9" isolation="isolate"><tspan x="0" y="0">janelas</tspan></text>
-  <path d="M105,150.8h31.9c2.5,0,4.6-2.1,4.6-4.6V60c0-2.8,2.3-5.1,5.1-5.1h108.4" fill="none" stroke="#6b8a74" stroke-width=".9"/>
 </svg>
