@@ -15,7 +15,7 @@ import {
   PawPrint,
   TreePine,
 } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { property } from "@/data/property";
 
 /* ——— Handwritten annotations (unchanged) ——— */
@@ -175,8 +175,28 @@ const iconMap = {
 
 /* ——— Combined component ——— */
 
+function useInViewOnce(ref: React.RefObject<HTMLElement | null>) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const check = () => {
+      const el = ref.current;
+      if (!el || visible) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85) {
+        setVisible(true);
+      }
+    };
+    check(); // check immediately in case already scrolled
+    window.addEventListener("scroll", check, { passive: true });
+    return () => window.removeEventListener("scroll", check);
+  }, [ref, visible]);
+  return visible;
+}
+
 export function HeroWithHighlights() {
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const highlightsRef = useRef<HTMLDivElement>(null);
+  const highlightsVisible = useInViewOnce(highlightsRef);
 
   // Track scroll across the entire wrapper
   const { scrollYProgress } = useScroll({
@@ -292,7 +312,7 @@ export function HeroWithHighlights() {
       </section>
 
       {/* ——— HIGHLIGHTS — scrolls over the sticky background ——— */}
-      <section id="highlights" className="relative z-10 px-6 py-14 md:px-12 lg:px-20">
+      <section id="highlights" ref={highlightsRef} className="relative z-10 px-6 py-14 md:px-12 lg:px-20">
         <div className="mx-auto max-w-[1100px]">
           <h2 className="sr-only">Destaques do apartamento</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -301,8 +321,8 @@ export function HeroWithHighlights() {
               return (
                 <div
                   key={item.title}
-                  className="highlight-card rounded-xl border border-white/10 bg-background-warm/95 p-6 backdrop-blur-xl transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-background-warm hover:shadow-lg"
-                  style={{ animationDelay: `${i * 0.06}s` }}
+                  className={`rounded-xl border border-white/10 bg-background-warm/95 p-6 backdrop-blur-xl transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-background-warm hover:shadow-lg ${highlightsVisible ? "highlight-card" : "opacity-0"}`}
+                  style={highlightsVisible ? { animationDelay: `${i * 0.06}s` } : undefined}
                 >
                   {Icon && <Icon className="h-7 w-7 text-accent" />}
                   <h3 className="mt-3 text-lg font-semibold text-white">
