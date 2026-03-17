@@ -27,7 +27,7 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Entre em contato pelo WhatsApp — respondo rápido.
+          Entre em contato conosco - respondemos rapidinho!
         </motion.p>
 
         <motion.div
