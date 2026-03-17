@@ -153,7 +153,7 @@ export const property = {
   contact: {
     whatsapp: "5561982399222",
     whatsappMessage:
-      "Olá! Vi o anúncio do apartamento na SQN 415/416 (Apt 202) e tenho interesse. Podemos conversar?",
+      "Olá! Vi o anúncio do apartamento na SQN 416 e tenho interesse. Podemos conversar?",
     email: "apartamentomocha@gmail.com",
   },
 

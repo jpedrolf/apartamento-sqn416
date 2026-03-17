@@ -42,12 +42,21 @@ export const metadata: Metadata = {
       "3 quartos · ~65m² · Semi-mobiliado · Pet-friendly · Parque Olhos D'Água a 5 min. R$ 3.800/mês.",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Apartamento Mocha — 3 quartos, ~65 m², Asa Norte, Brasília",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Apartamento Mocha · SQN 416 — Asa Norte",
     description:
       "3 quartos · ~65m² · Semi-mobiliado · Pet-friendly · R$ 3.800/mês.",
+    images: ["/images/og-image.jpg"],
   },
 };
 
