@@ -27,18 +27,3 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Highlight card fade-in — CSS-only, no iOS flash */
-@keyframes highlight-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.highlight-card {
-  animation: highlight-fade-in 0.4s ease-out both;
-}
