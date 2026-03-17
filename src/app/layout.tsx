@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Apartamento Mocha · SQN 416 — Asa Norte",
     description:
-      "3 quartos · ~65m² · Semi-mobiliado · Pet-friendly · R$ 3.800/més.",
+      "3 quartos · ~65m² · Semi-mobiliado · Pet-friendly · R$ 3.800/mês.",
   },
 };
 
