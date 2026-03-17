@@ -299,13 +299,10 @@ export function HeroWithHighlights() {
             {property.highlights.map((item, i) => {
               const Icon = iconMap[item.icon as keyof typeof iconMap];
               return (
-                <motion.div
+                <div
                   key={item.title}
-                  className="rounded-xl border border-white/10 bg-background-warm/95 p-6 backdrop-blur-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-background-warm hover:shadow-lg will-change-[opacity,transform]"
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
+                  className="highlight-card rounded-xl border border-white/10 bg-background-warm/95 p-6 backdrop-blur-xl transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-background-warm hover:shadow-lg"
+                  style={{ animationDelay: `${i * 0.06}s` }}
                 >
                   {Icon && <Icon className="h-7 w-7 text-accent" />}
                   <h3 className="mt-3 text-lg font-semibold text-white">
@@ -327,7 +324,7 @@ export function HeroWithHighlights() {
                       </a>
                     </p>
                   )}
-                </motion.div>
+                </div>
               );
             })}
           </div>
