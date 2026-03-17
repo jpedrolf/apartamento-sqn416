@@ -8,7 +8,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OGImage() {
-  const heroPath = join(process.cwd(), "public/images/gallery/hero.jpg");
+  const heroPath = join(process.cwd(), "public/images/og-hero.jpg");
   const heroBytes = await readFile(heroPath);
   const heroBase64 = `data:image/jpeg;base64,${heroBytes.toString("base64")}`;
 
