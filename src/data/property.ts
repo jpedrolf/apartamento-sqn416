@@ -1,4 +1,7 @@
 export const property = {
+  // Controle de anúncio — mudar para false para reativar
+  listingSuspended: true,
+
   // Identificação
   address: {
     full: "SQN 415/416, Bloco P, Apt 202",

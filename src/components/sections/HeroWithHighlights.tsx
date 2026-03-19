@@ -6,7 +6,7 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { ChevronDown, MessageCircle, PauseCircle } from "lucide-react";
 import {
   Wind,
   Layers,
@@ -228,8 +228,12 @@ export function HeroWithHighlights() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block rounded-full bg-accent/90 px-3.5 py-1 text-xs font-medium tracking-wide text-background backdrop-blur-sm md:px-4 md:py-1.5 md:text-sm">
-                Disponível para locação
+              <span className={`inline-block rounded-full px-3.5 py-1 text-xs font-medium tracking-wide backdrop-blur-sm md:px-4 md:py-1.5 md:text-sm ${
+                property.listingSuspended
+                  ? "bg-white/15 text-white/80"
+                  : "bg-accent/90 text-background"
+              }`}>
+                {property.listingSuspended ? "An\u00fancio suspenso" : "Dispon\u00edvel para loca\u00e7\u00e3o"}
               </span>
             </motion.div>
 
@@ -262,15 +266,22 @@ export function HeroWithHighlights() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
             >
-              <a
-                href={`https://wa.me/${property.contact.whatsapp}?text=${encodeURIComponent(property.contact.whatsappMessage)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-background shadow-lg transition-colors hover:bg-accent-light md:px-6 md:py-3 md:text-base"
-              >
-                <MessageCircle className="h-4 w-4 md:h-5 md:w-5" />
-                Agendar visita
-              </a>
+              {property.listingSuspended ? (
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-5 py-2.5 text-sm font-medium text-white/80 backdrop-blur-sm md:px-6 md:py-3 md:text-base">
+                  <PauseCircle className="h-4 w-4 md:h-5 md:w-5" />
+                  An&uacute;ncio suspenso
+                </span>
+              ) : (
+                <a
+                  href={`https://wa.me/${property.contact.whatsapp}?text=${encodeURIComponent(property.contact.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-background shadow-lg transition-colors hover:bg-accent-light md:px-6 md:py-3 md:text-base"
+                >
+                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5" />
+                  Agendar visita
+                </a>
+              )}
               <motion.button
                 onClick={() => {
                   document.getElementById("highlights")?.scrollIntoView({ behavior: "smooth" });

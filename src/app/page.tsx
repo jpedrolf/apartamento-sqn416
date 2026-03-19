@@ -10,10 +10,15 @@ import { Location } from "@/components/sections/Location";
 
 import { Contact } from "@/components/sections/Contact";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { SuspendedBanner } from "@/components/SuspendedBanner";
+import { property } from "@/data/property";
 
 export default function Home() {
+  const suspended = property.listingSuspended;
+
   return (
     <>
+      {suspended && <SuspendedBanner />}
       <HeroWithHighlights />
       {/* Solid background covers the fixed hero image for all remaining sections */}
       <div className="relative z-10 bg-background">
@@ -21,9 +26,9 @@ export default function Home() {
         <About />
         <FloorPlan />
         <Location />
-        <Contact />
+        {!suspended && <Contact />}
       </div>
-      <WhatsAppFab />
+      {!suspended && <WhatsAppFab />}
     </>
   );
 }
